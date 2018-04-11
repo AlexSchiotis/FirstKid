@@ -7,7 +7,7 @@ import net.thucydides.core.steps.ScenarioSteps;
 public class SearchSteps extends ScenarioSteps {
 
 
-    SearchPage searchPage;
+    private SearchPage searchPage;
 
     @Step
     public void openPage() {
