@@ -43,6 +43,8 @@ public class RegistryTest {
         registrySteps.correctPassWordField();
         registrySteps.wrongConfirmation();
         registrySteps.correctConfirmation();
+        registrySteps.negativeFirstName();
+        registrySteps.negativeLastName();
         newPassword = registrySteps.setPassword();
         registrySteps.setCredentials();
         registrySteps.confirmRegistry();

@@ -26,6 +26,9 @@ public class RegistryPage extends BasePage {
     @FindBy(id = "advice-required-entry-firstname")
     private WebElementFacade firstnameValidationDiv;
 
+    @FindBy(id = "advice-required-entry-lastname")
+    private WebElementFacade lastnameValidationDiv;
+
     @FindBy(id = "advice-validate-email-email_address")
     private WebElementFacade emailValidationDiv;
 
@@ -98,6 +101,12 @@ public class RegistryPage extends BasePage {
         assertThat("Unexpected error message", firstnameValidationDiv.getText(), is ("Acest câmp este obligatoriu."));
     }
 
+    public void checkLastnameField(){
+        String actualString = lastNameField.getText();
+        assertThat("Unexpected error message", lastnameValidationDiv.getText(), is ("Acest câmp este obligatoriu"));
+
+    }
+
     public String setWrongConfirmation(){
         String confirmation = getRandomString(6);
         typeInto(confirmationField, getRandomString(6));
@@ -128,7 +137,12 @@ public class RegistryPage extends BasePage {
     public void invalidFirstName() {
         firstNameField.type("");
     }
+
+    public void invalidLastName(){
+        lastNameField.type("");
+    }
 }
+
 
 
 

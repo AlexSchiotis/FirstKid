@@ -65,10 +65,12 @@ public class RegistrySteps extends ScenarioSteps {
     @Step
     public void negativeFirstName(){
         registryPage.invalidFirstName();
-
     }
 
-
+    @Step
+    public void negativeLastName(){
+        registryPage.invalidLastName();
+    }
 
     @Step
     public void correctConfirmation(){
