@@ -30,6 +30,23 @@ public class RegistryTest {
 
     }
 
+    @Test
+    public void negativeRegisterUser(){
+        registrySteps.openPage();
+        registrySteps.negEmail();
+        registrySteps.confirmRegistry();
+        registrySteps.correctEmailAdress();
+        registrySteps.confirmRegistry();
+        newEmail = registrySteps.setEmailAdress();
+        registrySteps.shortPassword();
+        registrySteps.confirmRegistry();
+        registrySteps.correctPassWordField();
+        registrySteps.wrongConfirmation();
+        registrySteps.correctConfirmation();
+        newPassword = registrySteps.setPassword();
+        registrySteps.setCredentials();
+        registrySteps.confirmRegistry();
+    }
     }
 
 
