@@ -18,4 +18,16 @@ public class SearchSteps extends ScenarioSteps {
     public void setSearchField() {
         searchPage.setSearchField();
     }
+
+    @Step
+    public void clickSearch() {
+        searchPage.clickSearchButton();
+    }
+
+    @Step
+    public void checkErrorMessage() {
+        searchPage.checkErrorMessage();
+
+    }
+
 }

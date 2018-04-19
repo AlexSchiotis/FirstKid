@@ -22,6 +22,8 @@ public class SearchTest {
     public void searchTest(){
         searchSteps.openPage();
         searchSteps.setSearchField();
+        searchSteps.clickSearch();
+        searchSteps.checkErrorMessage();
 
     }
 }
