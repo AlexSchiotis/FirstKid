@@ -14,18 +14,15 @@ public class RegistrySteps extends ScenarioSteps {
     public void openPage() {
         registryPage.open();
     }
-
     @Step
     public void setCredentials() {
         registryPage.setfirstNameField();
         registryPage.setlastNameField();
     }
-
     @Step
     public String setEmailAdress() {
         return registryPage.setEmailAdressField();
     }
-
     @Step
     public String setPassword() {
         String password = registryPage.setRandomPassword();
@@ -37,50 +34,64 @@ public class RegistrySteps extends ScenarioSteps {
     public void confirmRegistry() {
         registryPage.clickRegisterButton();
     }
+
+    @Step
+    public void registryButton(){
+        registryPage.registerButton();
+    }
+
     @Step
     public void negEmail(){
         registryPage.setNegEmail();
     }
     @Step
-    public void shortPassword(){
-        registryPage.setShortPassword();
-    }
-
-    @Step
-    public void wrongConfirmation(){
-        registryPage.setWrongConfirmation();
-    }
-
-    @Step
     public void correctEmailAdress() {
+        registryPage.checkEmailAddress();
         registryPage.clearEmailFiled();
         registryPage.setEmailAdressField();
     }
 
     @Step
-    public void correctFirsnameField(){
-        registryPage.clearFirsNameField();
-        registryPage.setfirstNameField();
-    }
-    @Step
     public void negativeFirstName(){
         registryPage.invalidFirstName();
+        registryPage.checkFirstnameField();
+        registryPage.clearFirsNameField();
+        registryPage.setfirstNameField();
     }
 
     @Step
     public void negativeLastName(){
         registryPage.invalidLastName();
+        registryPage.checkLastnameField();
+        registryPage.clearLastNameField();
+        registryPage.setlastNameField();
     }
 
     @Step
-    public void correctConfirmation(){
-        registryPage.clearConfirmationField();
-    }
+    public void shortPassword(){
+        registryPage.setShortPassword();
 
+    }
     @Step
-    public void correctPassWordField(){
+    public void repairPassword(){
+        registryPage.checkPasswordFiled();
         registryPage.clearPasswordFiled();
         registryPage.setRandomPassword();
+    }
+    @Step
+    public void wrongConfirmation(){
+        registryPage.setWrongConfirmation();
+
+    }
+    @Step
+    public void repairConfirmation(){
+        registryPage.checkConfirmation();
+        registryPage.clearConfirmationField();
+    }
+    @Step
+    public void confirmation(String password){
+        registryPage.clearConfirmationField();
+        registryPage.setConfirmationField(password);
     }
 
 }

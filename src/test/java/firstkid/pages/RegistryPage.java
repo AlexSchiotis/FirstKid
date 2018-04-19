@@ -61,17 +61,19 @@ public class RegistryPage extends BasePage {
         typeInto(emailAdressFiled, emailAdress);
         return emailAdress;
     }
-    public void setNegEmail(){
+
+    public void setNegEmail() {
         String emailAdress = getRandomString((8));
-        typeInto (emailAdressFiled, emailAdress);
+        typeInto(emailAdressFiled, emailAdress);
     }
-    public void clearEmailFiled(){
+
+    public void clearEmailFiled() {
         emailAdressFiled.clear();
     }
 
-    public void checkEmailAddress(){
+    public void checkEmailAddress() {
         String actualString = emailAdressFiled.getText();
-        assertThat("Unexpected error message", emailValidationDiv.getText(), is("Introdu o adresa de email valida."));
+        assertThat("Unexpected error message", emailValidationDiv.getText(), is("Introdu o adresă de email validă. De exemplu ionpopescu@domeniu.com."));
     }
 
     public String setRandomPassword() {
@@ -80,38 +82,39 @@ public class RegistryPage extends BasePage {
         return password;
     }
 
-    public String setShortPassword(){
+    public String setShortPassword() {
         String password = getRandomString(5);
         typeInto(passwordField, password);
         return password;
     }
 
-    public void checkPasswordFiled(){
+    public void checkPasswordFiled() {
         String actualString = passwordField.getText();
-        assertThat("Unexpected error message", passwordValidationDiv.getText(), is("Please enter 6 or more characters without leading or trailing spaces") );
+        assertThat("Unexpected error message", passwordValidationDiv.getText(), is("Please enter 6 or more characters without leading or trailing spaces."));
     }
 
-    public void checkConfirmation(){
+    public void checkConfirmation() {
         String actualString = confirmationField.getText();
-        assertThat("Unexpected error message", confirmationDiv.getText(), is ("Asigură-te că parolele coincid."));
+        assertThat("Unexpected error message", confirmationDiv.getText(), is("Asigură-te că parolele coincid."));
     }
 
-    public void checkFirstnameField(){
+    public void checkFirstnameField() {
         String actualString = firstNameField.getText();
-        assertThat("Unexpected error message", firstnameValidationDiv.getText(), is ("Acest câmp este obligatoriu."));
+        assertThat("Unexpected error message", firstnameValidationDiv.getText(), is("Acest câmp este obligatoriu."));
     }
 
-    public void checkLastnameField(){
+    public void checkLastnameField() {
         String actualString = lastNameField.getText();
-        assertThat("Unexpected error message", lastnameValidationDiv.getText(), is ("Acest câmp este obligatoriu"));
+        assertThat("Unexpected error message", lastnameValidationDiv.getText(), is("Acest câmp este obligatoriu."));
 
     }
 
-    public String setWrongConfirmation(){
+    public String setWrongConfirmation() {
         String confirmation = getRandomString(6);
         typeInto(confirmationField, getRandomString(6));
         return confirmation;
     }
+
     public void setConfirmationField(String password) {
         typeInto(confirmationField, password);
     }
@@ -120,6 +123,10 @@ public class RegistryPage extends BasePage {
         checkAndCloseCookies();
         waitFor(registerButton);
         clickOn(registerButton);
+    }
+
+    public void registerButton() {
+        registerButton.click();
     }
 
     public void clearPasswordFiled() {
@@ -138,9 +145,14 @@ public class RegistryPage extends BasePage {
         firstNameField.type("");
     }
 
-    public void invalidLastName(){
+    public void invalidLastName() {
         lastNameField.type("");
     }
+
+    public void clearLastNameField() {
+        lastNameField.clear();
+    }
+
 }
 
 

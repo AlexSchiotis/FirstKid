@@ -36,18 +36,26 @@ public class RegistryTest {
         registrySteps.negEmail();
         registrySteps.confirmRegistry();
         registrySteps.correctEmailAdress();
-        registrySteps.confirmRegistry();
+        registrySteps.registryButton();
         newEmail = registrySteps.setEmailAdress();
         registrySteps.shortPassword();
-        registrySteps.confirmRegistry();
-        registrySteps.correctPassWordField();
+        registrySteps.registryButton();
+        registrySteps.repairPassword();
         registrySteps.wrongConfirmation();
-        registrySteps.correctConfirmation();
+        registrySteps.registryButton();
+        registrySteps.repairConfirmation();
+        registrySteps.confirmation(newPassword);
+        registrySteps.registryButton();
         registrySteps.negativeFirstName();
+        registrySteps.registryButton();
         registrySteps.negativeLastName();
-        newPassword = registrySteps.setPassword();
+        registrySteps.registryButton();
+        String newPassword = registrySteps.setPassword();
+        registrySteps.confirmation(newPassword);
         registrySteps.setCredentials();
-        registrySteps.confirmRegistry();
+        registrySteps.registryButton();
+
+
     }
     }
 
