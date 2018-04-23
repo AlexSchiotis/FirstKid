@@ -33,7 +33,9 @@ public class LogInPage extends BasePage {
     }
     public void checkPassFiled(String pass) {
     }
-
+    public void checkButton(){
+        checkButton();
+    }
     public void logInButton(){
         sendKey.click();
     }

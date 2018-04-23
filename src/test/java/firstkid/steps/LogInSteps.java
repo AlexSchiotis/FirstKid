@@ -45,6 +45,9 @@ RegistryPage registryPage;
         waitABit(4000);
         logInPage.openLogoutPage();
     }
-
+    @Step
+    public void checkButton(){
+        checkButton();
+    }
     }
 
