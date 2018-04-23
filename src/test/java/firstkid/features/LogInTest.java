@@ -21,6 +21,7 @@ public class LogInTest {
 
     @Steps
     RegistrySteps registrySteps;
+    @Steps
     LogInSteps logInSteps;
 
     @Test
@@ -30,8 +31,7 @@ public class LogInTest {
         newPassword = registrySteps.setPassword();
         registrySteps.setCredentials();
         registrySteps.confirmRegistry();
-        logInSteps.openAccount();
-        logInSteps.logOutButton();
+        logInSteps.logoutPage();
         logInSteps.openPage();
         logInSteps.setEmail(newEmail);
         logInSteps.setPass(newPassword);

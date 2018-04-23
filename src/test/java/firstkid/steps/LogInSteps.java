@@ -22,13 +22,13 @@ RegistryPage registryPage;
     @Step
     public void setEmail(String email){
         logInPage.checkEmailFiled(email);
-        registryPage.setEmailAdressField();
+        logInPage.emailFiled();
     }
 
     @Step
     public void setPass(String pass){
         logInPage.checkPassFiled(pass);
-        registryPage.setRandomPassword();
+       logInPage.setRandomPassword();
     }
 
     @Step
@@ -37,12 +37,13 @@ RegistryPage registryPage;
     }
 
     @Step
-    public void logOutButton(){
-        logInPage.logOut();
-    }
-    @Step
     public void logIn(){
         logInPage.logInButton();
+    }
+    @Step
+    public void logoutPage(){
+        waitABit(4000);
+        logInPage.openLogoutPage();
     }
 
     }

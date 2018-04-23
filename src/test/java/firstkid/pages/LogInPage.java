@@ -23,9 +23,6 @@ public class LogInPage extends BasePage {
     @FindBy(css = ".my-account-link")
     private WebElement myAccount;
 
-    @FindBy(css = ".mini-my-account-link-logout-link")
-    private WebElementFacade logOut;
-
     @FindBy(id = "send2")
     private WebElementFacade sendKey;
 
@@ -36,14 +33,26 @@ public class LogInPage extends BasePage {
     }
     public void checkPassFiled(String pass) {
     }
-    public void logOut(){
-        logOut.click();
-    }
+
     public void logInButton(){
         sendKey.click();
     }
     public void openMyAccount() {
         mouseOver(myAccount);
+    }
+        public String emailFiled () {
+            String newEmailAdress = getRandomString(6) + "@" + getRandomString(4) + ".com";
+            typeInto(emailField, newEmailAdress);
+            return newEmailAdress;
+    }
 
+    public String setRandomPassword() {
+        String password = getRandomString(7);
+        typeInto(passwordFiled, password);
+        return password;
+    }
+    private String pagePath = "https://qa.firstkid.ro/customer/account/logout/";
+    public void openLogoutPage() {
+        getDriver().get(pagePath);
     }
 }
