@@ -18,7 +18,7 @@ public class LogInPage extends BasePage {
     private WebElementFacade emailField;
 
     @FindBy(id = "pass")
-    private WebElementFacade passwordFiled;
+    private WebElementFacade passwordField;
 
     @FindBy(css = ".my-account-link")
     private WebElement myAccount;
@@ -28,6 +28,7 @@ public class LogInPage extends BasePage {
 
 
     public void checkLogInPage() {
+
     }
     public void checkEmailFiled(String email) {
     }
@@ -50,11 +51,23 @@ public class LogInPage extends BasePage {
 
     public String setRandomPassword() {
         String password = getRandomString(7);
-        typeInto(passwordFiled, password);
+        typeInto(passwordField, password);
         return password;
     }
     private String pagePath = "https://qa.firstkid.ro/customer/account/logout/";
     public void openLogoutPage() {
         getDriver().get(pagePath);
+    }
+
+    private String newPagePath = "https://qa.firstkid.ro/customer/account/login/";
+    public void openAccountPage(){
+        getDriver().get(newPagePath);
+    }
+
+    public void setEmailAdressField(String email){
+        typeInto(emailField, email);
+    }
+    public void setPasswordField(String password){
+        typeInto(passwordField, password);
     }
 }

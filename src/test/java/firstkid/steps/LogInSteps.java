@@ -32,9 +32,14 @@ RegistryPage registryPage;
     }
 
     @Step
-    public void openAccount(){
+    public void openAccount() {
+        waitABit(7000);
         logInPage.openMyAccount();
     }
+     @Step
+     public void openAccountPage(){
+         logInPage.openAccountPage();
+        }
 
     @Step
     public void logIn(){
@@ -46,8 +51,23 @@ RegistryPage registryPage;
         logInPage.openLogoutPage();
     }
     @Step
-    public void checkButton(){
-        checkButton();
+    public void randomLoginEmail(){
+        logInPage.emailFiled();
+    }
+    @Step
+    public void randomLoginPassword(){
+        registryPage.setRandomPassword();
+    }
+    @Step
+    public String loginEmail(String email){
+        logInPage.setEmailAdressField(email);
+        return email;
+
+    }
+    @Step
+    public String loginPassword(String password) {
+        logInPage.setPasswordField(password);
+        return password;
     }
     }
 

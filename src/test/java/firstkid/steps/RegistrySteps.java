@@ -21,7 +21,7 @@ public class RegistrySteps extends ScenarioSteps {
     }
     @Step
     public String setEmailAdress() {
-        return registryPage.setEmailAdressField();
+        return registryPage.setRandomEmailAdressField();
     }
     @Step
     public String setPassword() {
@@ -32,6 +32,7 @@ public class RegistrySteps extends ScenarioSteps {
 
     @Step
     public void confirmRegistry() {
+
         registryPage.clickRegisterButton();
     }
 
@@ -48,7 +49,7 @@ public class RegistrySteps extends ScenarioSteps {
     public void correctEmailAdress() {
         registryPage.checkEmailAddress();
         registryPage.clearEmailFiled();
-        registryPage.setEmailAdressField();
+        registryPage.setRandomEmailAdressField();
     }
 
     @Step

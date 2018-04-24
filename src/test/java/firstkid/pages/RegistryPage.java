@@ -56,11 +56,12 @@ public class RegistryPage extends BasePage {
         typeInto(lastNameField, getRandomString(6));
     }
 
-    public String setEmailAdressField() {
+    public String setRandomEmailAdressField() {
         String emailAdress = getRandomString(6) + "@" + getRandomString(4) + ".com";
         typeInto(emailAdressFiled, emailAdress);
         return emailAdress;
     }
+
 
     public void setNegEmail() {
         String emailAdress = getRandomString((8));
@@ -81,6 +82,7 @@ public class RegistryPage extends BasePage {
         typeInto(passwordField, password);
         return password;
     }
+
 
     public String setShortPassword() {
         String password = getRandomString(5);

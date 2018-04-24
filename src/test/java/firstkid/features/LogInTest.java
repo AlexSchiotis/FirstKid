@@ -32,16 +32,22 @@ public class LogInTest {
         registrySteps.setCredentials();
         registrySteps.confirmRegistry();
         logInSteps.logoutPage();
-        logInSteps.openPage();
-        logInSteps.setEmail(newEmail);
-        logInSteps.setPass(newPassword);
+        logInSteps.openAccountPage();
+        logInSteps.loginEmail(newEmail);
+        logInSteps.loginPassword(newPassword);
         logInSteps.logIn();
-
 
     }
 
+        @Test
+
+    public void negativeLoginUser() {
+            logInSteps.openAccountPage();
+            logInSteps.randomLoginEmail();
+            logInSteps.loginPassword(newPassword);
+            logInSteps.logIn();
 
 
-
+        }
 
 }
