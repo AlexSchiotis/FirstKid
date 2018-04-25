@@ -32,8 +32,7 @@ RegistryPage registryPage;
     }
 
     @Step
-    public void openAccount() {
-        waitABit(7000);
+    public void openAccount(){
         logInPage.openMyAccount();
     }
      @Step
