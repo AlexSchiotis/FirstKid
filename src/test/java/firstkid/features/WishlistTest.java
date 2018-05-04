@@ -37,12 +37,12 @@ public class WishlistTest {
         registrySteps.setCredentials();
         registrySteps.confirmRegistry();
         wishlistSteps.openNewHomepage();
-        wishlistSteps.extendMenu();
-        wishlistSteps.firstItem();
+        wishlistSteps.selectArticoleMamici();
+        wishlistSteps.selectFirstProduct();
         wishlistSteps.addToWishlist();
         wishlistSteps.openNewHomepage();
-        wishlistSteps.extendMenu();
-        wishlistSteps.secondItem();
+        wishlistSteps.selectArticoleMamici();
+        wishlistSteps.selectSecondItem();
         wishlistSteps.addToWishlist();
         wishlistSteps.addToCart();
 

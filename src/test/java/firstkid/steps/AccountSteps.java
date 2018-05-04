@@ -4,6 +4,7 @@ package firstkid.steps;
 
 import firstkid.pages.AccoutPage;
 import firstkid.pages.RegistryPage;
+import firstkid.pages.WishlistPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
@@ -11,6 +12,7 @@ public class AccountSteps extends ScenarioSteps {
 
     AccoutPage accoutPage;
     RegistryPage registryPage;
+    WishlistPage wl;
 
     @Step
     public void openPage() {
@@ -75,4 +77,5 @@ public class AccountSteps extends ScenarioSteps {
     public void saveButton(){
         accoutPage.saveNewPassword();
     }
+
 }

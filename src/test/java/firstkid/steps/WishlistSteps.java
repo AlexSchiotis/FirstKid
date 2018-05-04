@@ -10,15 +10,7 @@ public class WishlistSteps extends ScenarioSteps {
 
     WishlistPage wishlistPage;
 
-    @Step
-    public void firstItem(){
-        wishlistPage.firstItem();
-    }
 
-    @Step
-    public void secondItem(){
-        wishlistPage.secondItem();
-    }
 
     @Step
     public void addToWishlist(){
@@ -33,9 +25,21 @@ public class WishlistSteps extends ScenarioSteps {
     public void openNewHomepage(){
         wishlistPage.openHomepage();
    }
+
+
+
     @Step
-    public void extendMenu(){
-        wishlistPage.openMenu();
+    public void selectArticoleMamici(){
+        wishlistPage.astaEOMetodaDeTestSITreStearsa("Articole mamici");
+    }
+
+    @Step
+    public void selectFirstProduct(){
+        wishlistPage.firstProductFromList("Boxeri modelatori Crem");
+    }
+    @Step
+    public void selectSecondItem(){
+        wishlistPage.secondProductFromList("Centura Abdominala Postnatala - BabyOno - XL");
     }
 
     @Step

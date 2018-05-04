@@ -38,10 +38,10 @@ public class RegistryPage extends BasePage {
     @FindBy(id = "advice-validate-cpassword-confirmation")
     private WebElementFacade confirmationDiv;
 
-    @FindBy(id = "password")
+    @FindBy(css = ".field div input#password")
     private WebElementFacade passwordField;
 
-    @FindBy(id = "confirmation")
+    @FindBy(css = ".field div input#confirmation")
     private WebElementFacade confirmationField;
 
     @FindBy(css = "button[title='Trimite']")

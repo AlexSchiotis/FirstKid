@@ -93,7 +93,6 @@ public class AccoutPage extends BasePage{
        return checkbox.isSelected();
     }
 
-
     public void setCurrentPassword(String password){
         typeInto(currentPassword, password);
     }
@@ -105,10 +104,7 @@ public class AccoutPage extends BasePage{
     }
     public void confirmPassword(String password){
         typeInto(changeConfirmationField, chagePassword());
-
     }
-
-
     public void saveNewPassword(){
         saveButton.click();
     }

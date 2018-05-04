@@ -14,16 +14,16 @@ import org.openqa.selenium.support.FindBy;
 @DefaultUrl("https://qa.firstkid.ro/customer/account/index/")
 public class LogInPage extends BasePage {
 
-    @FindBy(id = "email")
+    @FindBy(css = ".input-box input#email")
     private WebElementFacade emailField;
 
-    @FindBy(id = "pass")
+    @FindBy(css = ".input-box input#pass")
     private WebElementFacade passwordField;
 
     @FindBy(css = ".my-account-link")
     private WebElement myAccount;
 
-    @FindBy(id = "send2")
+    @FindBy(css = ".buttons-set button#send2")
     private WebElementFacade sendKey;
 
 
