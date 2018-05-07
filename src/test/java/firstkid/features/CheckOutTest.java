@@ -36,6 +36,10 @@ public class CheckOutTest {
         cartToWishListSteps.addProductToCard();
         cartToWishListSteps.verMessage();
         checkOutSteps.clickCheckOut();
+        checkOutSteps.setOrasField();
+        checkOutSteps.setAdressField();
+        checkOutSteps.firstTelNumber();
+        checkOutSteps.clickButton();
 
 
     }
