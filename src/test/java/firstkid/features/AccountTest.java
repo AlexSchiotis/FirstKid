@@ -1,19 +1,20 @@
 package firstkid.features;
 
-import firstkid.steps.LogInSteps;
 import firstkid.steps.RegistrySteps;
-import firstkid.steps.WishlistSteps;
+import firstkid.steps.AccountSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.openqa.grid.web.servlet.handler.SeleniumBasedResponse;
 import org.openqa.selenium.WebDriver;
 
 
 @RunWith(SerenityRunner.class)
-public class WishlistTest {
+
+
+public class AccountTest {
+
 
     @Managed(uniqueSession = true)
     public WebDriver driver;
@@ -22,38 +23,25 @@ public class WishlistTest {
 
     @Steps
     RegistrySteps registrySteps;
-    @Steps
-    LogInSteps logInSteps;
-    @Steps
-    WishlistSteps wishlistSteps;
 
+    @Steps
+    AccountSteps accountSteps;
 
     @Test
-    public void WishlistTest(){
-
+    public void accountUser(){
         registrySteps.openPage();
         newEmail = registrySteps.setEmailAdress();
         newPassword = registrySteps.setPassword();
         registrySteps.setCredentials();
         registrySteps.confirmRegistry();
-        wishlistSteps.openNewHomepage();
-        wishlistSteps.selectArticoleMamici();
-        wishlistSteps.selectFirstProduct();
-        wishlistSteps.addToWishlist();
-        wishlistSteps.openNewHomepage();
-        wishlistSteps.selectArticoleMamici();
-        wishlistSteps.selectSecondItem();
-        wishlistSteps.addToWishlist();
-        wishlistSteps.addToCart();
-
-
-
+        accountSteps.passwordChange();
+        accountSteps.setCurrentPassword(newPassword);
+        accountSteps.checkBox();
+        accountSteps.changePassword();
+        accountSteps.confirmNewPassword();
+        accountSteps.saveButton();
 
     }
-
-
-
-
 
 
 
