@@ -39,6 +39,7 @@ public class CheckOutTest {
         checkOutSteps.setOrasField();
         checkOutSteps.setAdressField();
         checkOutSteps.firstTelNumber();
+        checkOutSteps.checkBox();
         checkOutSteps.clickButton();
 
 

@@ -33,6 +33,10 @@ public class CheckOutSteps extends ScenarioSteps {
     }
 
     @Step
+    public void checkBox() {
+        checkOutPage.checkbox();
+    }
+    @Step
     public void clickButton() {
         checkOutPage.clickOnComandaButton();
     }

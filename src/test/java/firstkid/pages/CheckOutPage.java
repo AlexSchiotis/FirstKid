@@ -21,8 +21,9 @@ public class CheckOutPage extends BasePage {
     public WebElementFacade checkOutButton;
 
     public void clickCheckOutButton() {
-         clickOn(checkOutButton);}
-         // checkAndCloseCookies();
+        clickOn(checkOutButton);
+    }
+    // checkAndCloseCookies();
     //waitFor(checkOutButton);.totals.btn-checkout
 
     @FindBy(id = "billing_city")
@@ -52,6 +53,10 @@ public class CheckOutPage extends BasePage {
         return phoneNumber;
     }
 
+    @FindBy(css = "div ol li p.agree input")
+    private WebElementFacade agreeCheckbox;
+
+
     @FindBy(id = "submit-btn")
     public WebElementFacade comandaButton;
 
@@ -60,4 +65,7 @@ public class CheckOutPage extends BasePage {
     }
 
 
+    public boolean checkbox() {
+        return agreeCheckbox.isSelected();
+    }
 }
